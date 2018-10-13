@@ -1,1 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+//Fuentes
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower'); //Pagina Principal Titulo llamativo
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville'); //Pagina Principal titulo normal
+@import url('https://fonts.googleapis.com/css?family=Arimo'); //Para texto
+
+/*Variables Globales*/
+
+    //Colores
+    $iea-naranja: #f99134;
+    $iea-boton: #ffa50063;
+    $iea-titulo-color:#f9d034;
+
+    //Fuentes
+    $iea-titulo-llamativo: 'Indie Flower', cursive;
+    $iea-titulo: 'Libre Baskerville', serif;
+    $iea-texto: 'Arimo', sans-serif;
+
+
+/*SCSS Globales*/
+    body, html{
+        height: 100%;
+    }
+
+    .iea-boton{
+        color:white; 
+        border: 1px solid orange; 
+        height: 50px; 
+        width: 200px; 
+        font-size: 15px;
+        background-color: $iea-boton;
+    }
+
+    .iea-titulo{
+        font-family: $iea-titulo-llamativo;
+        color: $iea-titulo-color;
+        font-size:50px;
+    }
+
+    .iea-columna-texto{
+        text-align: center;
+        .iea-titulo{
+            padding-bottom: 15px;
+        }
+        .iea-texto{
+            color: white;
+            font-family: $iea-titulo-llamativo;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    }
