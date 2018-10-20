@@ -18,11 +18,13 @@
     $iea-titulo-llamativo: 'Indie Flower', cursive;
     $iea-titulo: 'Libre Baskerville', serif;
     $iea-texto: 'Arimo', sans-serif;
-
-
+  
 /*SCSS Globales*/
     body, html{
         height: 100%;
+        background-color: #f4f4f4;
+        font-size: 1.0rem;
+        
     }
 
     .iea-boton{
@@ -50,5 +52,9 @@
             font-family: $iea-titulo-llamativo;
             font-size: 20px;
             font-weight: bold;
+            text-shadow: 0.2px 0.2px 5px black;
+        }
+        .black{
+            color: black;
         }
     }
