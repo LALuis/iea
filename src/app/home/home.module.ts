@@ -4,13 +4,20 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { GaleriaComponent } from './galeria/galeria.component';
 import { HttpClientModule } from '@angular/common/http';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BaseService } from './base.service';
+import { AngularFireModule } from 'angularfire2';
+import { environment } from '../../environments/environment';
+import { AngularFirestore } from 'angularfire2/firestore';
 @NgModule({
   imports: [
     CommonModule,
     HomeRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule, ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase)
   ],
-  declarations: [HomeComponent, GaleriaComponent]
+  declarations: [HomeComponent, GaleriaComponent],
+  providers:[AngularFirestore, HomeComponent]
 })
 export class HomeModule { }

@@ -1,43 +1,40 @@
-<div class="iea-contenido">
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-md navbar-default fixed-top d-flex flex-row" role="navigation">
-    <div class="order-0">
-      <a class="navbar-brand p-10" href="#"><img class="image-fluid iea-logo" src="assets/iea_logo_byn.png"></a>
-    </div>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
-      <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
-    </button>
+<nav class="navbar navbar-expand-md navbar-default fixed-top d-flex flex-row" role="navigation">
+  <div class="order-0">
+    <a class="navbar-brand p-10" href="#"><img class="image-fluid iea-logo" src="assets/iea_logo_byn.png"></a>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+    <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+  </button>
+  <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+    <ul class="navbar-nav ml-auto text-center">
+      <li class="nav-item">
+        <hr>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Inicio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Institucional</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" (click)="navegar('galeria')">Galería</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contacto</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-      <ul class="navbar-nav ml-auto text-center">
-        <li class="nav-item">
-          <hr>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Inicio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Institucional</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Galería</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contacto</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <!-- /Navbar -->
+<div class="container-fluid h-100" style="margin-top: 70px; padding-top: 70px">
 
-  <!-- Header -->
-  <div class="seccion-video">
-    <video autoplay="true" muted='true' loop id="myVideo">
-      <source src="assets/videos/video_3.mp4" type="video/mp4">
-      Your browser does not support HTML5 video.
-    </video>
+  <div class="seccion-video" id="inicio">
+    <!-- <video autoplay="true" muted='true' loop id="myVideo">
+          <source src="assets/videos/video_3.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video> -->
 
-    <div class="row h-100 video-contenido">
+    <div class="row h-100 video-contenido" style="background-color:black;">
       <div class="col align-self-center" style="color:white">
         <h3 class="iea-titulo"><strong>¿Qué hacemos?</strong></h3>
         <h2 class="video-mensaje">Empoderamos a través de la tecnología.</h2>
@@ -55,63 +52,71 @@
       </div>
     </div>
   </div>
-  <!-- /Header -->
-  <hr>
-  <!-- Sección 1 -->
-  <div class="seccion" id="#seccion1">
-    Sección 1
-  </div>
-  <!-- /Sección 1 -->
 
-  <!-- Sección 2 -->
-  <div class="seccion" style="background-color: white" style="background-image: url('assets/imagenes/42.jpeg'); background-attachment: fixed; padding: 0;">
-    <div class="row h-100 align-self-center" style="width:100%; padding:5%; margin: 0;">
-      <div class="col-4 iea-columna-texto">
-        <h3 class="iea-titulo"><strong><i class="fa fa-question-circle"></i></strong></h3>
-        <h3 class="iea-titulo"><strong>¿Quiénes somos?</strong></h3>
-        <p class="iea-texto">Informáticos en Acción (I.E.A) es una iniciativa juvenil fundada en mayo del 2018 con el
-          fin de acercar la tecnología como herramienta para impulsar y acompañar los procesos comunitarios en los
-          asentamientos irregulares de Uruguay.</p>
+
+
+
+  <div class="row h-100 seccion-fondo" *ngIf="tipoImagen.portada" [ngStyle]="{ 'background-image': 'url(' + decode +  tipoImagen.portada.imagen + ')'}">
+    <div class="col-4 iea-columna-texto">
+      <h3 class="iea-titulo"><strong><i class="fa fa-question-circle"></i></strong></h3>
+      <h3 class="iea-titulo"><strong>¿Quiénes somos?</strong></h3>
+      <p class="iea-texto">Informáticos en Acción (I.E.A) es una iniciativa juvenil fundada en mayo del 2018 con el
+        fin de acercar la tecnología como herramienta para impulsar y acompañar los procesos comunitarios en los
+        asentamientos irregulares de Uruguay.</p>
+    </div>
+    <div class="col-4 iea-columna-texto">
+      <h3 class="iea-titulo"><strong><i class="fa fa-briefcase"></i></strong></h3>
+      <h3 class="iea-titulo"><strong>Nuestra misión y visión</strong></h3>
+      <p class="iea-texto"><strong>La misión</strong> de Informáticos en Acción es brindar espacios de formación en
+        tecnología y facilitar el acceso a la misma.</p>
+      <p class="iea-texto"><strong>La visión</strong> de Informáticos en Acción es la democratización de la
+        tecnología y lograr el empoderamiento a través de ella.</p>
+    </div>
+    <div class="col-4 iea-columna-texto">
+      <h3 class="iea-titulo"><strong><i class="fa fa-handshake-o"></i></strong></h3>
+      <h3 class="iea-titulo"><strong>¿Cómo ayudarnos?</strong></h3>
+      <p class="iea-texto"><strong>Seguinos!</strong> Si, solo siguiendonos ya estas ayudandonos a llegar a mas
+        gente.</p>
+      <p class="iea-texto"><strong>Sumate!</strong> Te gustaria ser voluntario? Buscamos jovenes con ganas de generar
+        un cambio en la sociedad y hacer buenos amigos</p>
+      <p class="iea-texto"><strong>Dona!</strong> Buscamos alimentos, utiles escolares y partes de computadoras.
+        Animate a escribirnos por cualquier consulta.</p>
+    </div>
+  </div>
+  <div class="row h-100" style="background-color:blueviolet;" id="institucional">
+    <div class="col">
+
+    </div>
+  </div>
+  <div class="row h-100 seccion-fondo" *ngIf="tipoImagen.galeriaInstagram" [ngStyle]="{ 'background-image': 'url(' + decode +  tipoImagen.galeriaInstagram.imagen + ')'}"
+    id="galeria">
+    <div class="col">
+
+    </div>
+  </div>
+  <div class="row h-100" style="background-color:blueviolet;">
+    <div class="col">
+      <div class="row mt-5 mb-2">
+        <div class="col text-center">
+          <h3 class="iea-titulo"><strong>Galeria de Instagram</strong></h3>
+        </div>
       </div>
-      <div class="col-4 iea-columna-texto">
-        <h3 class="iea-titulo"><strong><i class="fa fa-briefcase"></i></strong></h3>
-        <h3 class="iea-titulo"><strong>Nuestra misión y visión</strong></h3>
-        <p class="iea-texto"><strong>La misión</strong> de Informáticos en Acción es brindar espacios de formación en
-          tecnología y facilitar el acceso a la misma.</p>
-        <p class="iea-texto"><strong>La visión</strong> de Informáticos en Acción es la democratización de la
-          tecnología y lograr el empoderamiento a través de ella.</p>
-      </div>
-      <div class="col-4 iea-columna-texto">
-        <h3 class="iea-titulo"><strong><i class="fa fa-handshake-o"></i></strong></h3>
-        <h3 class="iea-titulo"><strong>¿Cómo ayudarnos?</strong></h3>
-        <p class="iea-texto"><strong>Seguinos!</strong> Si, solo siguiendonos ya estas ayudandonos a llegar a mas
-          gente.</p>
-        <p class="iea-texto"><strong>Sumate!</strong> Te gustaria ser voluntario? Buscamos jovenes con ganas de generar
-          un cambio en la sociedad y hacer buenos amigos</p>
-        <p class="iea-texto"><strong>Dona!</strong> Buscamos alimentos, utiles escolares y partes de computadoras.
-          Animate a escribirnos por cualquier consulta.</p>
+      <div class="row align-self-center">
+        <div class="col">
+          <iframe src='https://www.juicer.io/api/feeds/informaticos_en_accion/iframe' frameborder='0' width='100%'
+            height='500' style='display:block;margin:0 auto;'></iframe>
+        </div>
       </div>
     </div>
   </div>
-  <!-- /Sección 2 -->
-
-  <!-- Sección 3 -->
-  <div class="seccion">
-    seccion 3
-  </div>
-  <!-- /Sección 3 -->
-
-  <!-- Sección 4 -->
-  <div class="seccion align-self-center" style="background-image: url('assets/imagenes/8.jpeg'); background-attachment: fixed;">
-    <div class="row mt-5 mb-2">
-      <div class="col text-center">
-        <h3 class="iea-titulo"><strong>Galeria de Instagram</strong></h3>
-      </div>
-    </div>
-    <div class="row align-self-center">
-      <div class="col">
-        <iframe src='https://www.juicer.io/api/feeds/informaticos_en_accion/iframe' frameborder='0' width='100%' height='500'
-          style='display:block;margin:0 auto;'></iframe>
-      </div>
+  <div class="row h-100 seccion-fondo" *ngIf="tipoImagen.nosotros" [ngStyle]="{ 'background-image': 'url(' + decode +  tipoImagen.nosotros.imagen + ')'}"
+    id="nosotros">
+    <div class="col">
     </div>
   </div>
+  <div class="row" style="background-color:black" id="contacto">
+    <div class="col" style="color:white">
+      <h6>Contacto:</h6>
+    </div>
+  </div>
+</div>

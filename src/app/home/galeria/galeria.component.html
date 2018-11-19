@@ -1,3 +1,13 @@
-<!-- SnapWidget -->
-<script src="https://snapwidget.com/js/snapwidget.js"></script>
-<iframe src="https://snapwidget.com/embed/621680" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%; "></iframe>
+<div class="row" style="background-color:black" id="contacto">
+    <div class="col-2" style="color:white">
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Example select</label>
+            <select [(ngModel)]="tipoImagenSeleccionada" class="form-control" id="exampleFormControlSelect1">
+                <ng-container *ngFor="let seccion of secciones">
+                    <option [value]="seccion">{{seccion}}</option>
+                </ng-container>
+            </select>
+        </div>
+        <input type="file" id="avatar" (change)="subirImagen($event)">
+    </div>
+</div>

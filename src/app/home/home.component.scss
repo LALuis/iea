@@ -17,7 +17,7 @@
 }
 
 .iea-contenido{
-    padding-top:70px; 
+    margin-top:70px; 
     height: 100%;
     .seccion{
         height: 100%;
@@ -51,5 +51,15 @@
 
 .seccion{
     padding: 2%;
+    padding-top: 70px;
+}
+
+.seccion-fondo{
+    background-attachment: fixed;
+    padding: 0px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 5%;
 }
 
