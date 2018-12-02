@@ -56,7 +56,7 @@
 
 
 
-  <div class="row h-100 seccion-fondo" *ngIf="tipoImagen.portada" [ngStyle]="{ 'background-image': 'url(' + decode +  tipoImagen.portada.imagen + ')'}">
+  <div class="row h-100 seccion-fondo" *ngIf="tipoImagen && tipoImagen.portada" [ngStyle]="{ 'background-image': 'url(' + decode +  tipoImagen.portada.imagen + ')'}">
     <div class="col-4 iea-columna-texto">
       <h3 class="iea-titulo"><strong><i class="fa fa-question-circle"></i></strong></h3>
       <h3 class="iea-titulo">¿Quiénes somos?</h3>
@@ -119,7 +119,7 @@
       </div>
     </div>
   </div>
-  <div class="row h-100 seccion-fondo" *ngIf="tipoImagen.galeriaInstagram" [ngStyle]="{ 'background-image': 'url(' + decode +  tipoImagen.galeriaInstagram.imagen + ')'}"
+  <div class="row h-100 seccion-fondo" *ngIf="tipoImagen && tipoImagen.galeriaInstagram" [ngStyle]="{ 'background-image': 'url(' + decode +  tipoImagen.galeriaInstagram.imagen + ')'}"
     id="galeria">
     <div class="col">
 
@@ -140,7 +140,7 @@
       </div>
     </div>
   </div>
-  <div class="row h-100 seccion-fondo" *ngIf="tipoImagen.nosotros" [ngStyle]="{ 'background-image': 'url(' + decode +  tipoImagen.nosotros.imagen + ')'}"
+  <div class="row h-100 seccion-fondo" *ngIf="tipoImagen && tipoImagen.nosotros" [ngStyle]="{ 'background-image': 'url(' + decode +  tipoImagen.nosotros.imagen + ')'}"
     id="nosotros">
     <div class="col">
     </div>

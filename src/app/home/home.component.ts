@@ -13,7 +13,11 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   public decode = "data:image/png;base64,";
-  public tipoImagen = [];
+  public tipoImagen = {
+      portada:null,
+      nosotros:null,
+      galeriaInstagram:null
+    };
   public dirNum: number = 0;
   public directorio = [
     {
