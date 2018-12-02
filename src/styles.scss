@@ -8,6 +8,10 @@
 @import url('https://fonts.googleapis.com/css?family=Arimo'); //Para texto
 
 /*Variables Globales*/
+@font-face {
+    font-family: Lato;
+    src: url(/assets/fuentes/edosz.ttf) format("truetype");
+  }
 
     //Colores
     $iea-naranja: #f99134;
@@ -15,9 +19,9 @@
     $iea-titulo-color:#f9d034;
 
     //Fuentes
-    $iea-titulo-llamativo: 'Indie Flower', cursive;
+    $iea-titulo-llamativo: Lato; //'Indie Flower', cursive;
     $iea-titulo: 'Libre Baskerville', serif;
-    $iea-texto: 'Arimo', sans-serif;
+    $iea-texto: Helvetica;//'Arimo', sans-serif;
   
 /*SCSS Globales*/
     body, html{
@@ -49,8 +53,8 @@
         }
         .iea-texto{
             color: white;
-            font-family: $iea-titulo-llamativo;
-            font-size: 20px;
+            font-family: $iea-texto;
+            font-size: 18px;
             font-weight: bold;
             text-shadow: 0.2px 0.2px 5px black;
         }

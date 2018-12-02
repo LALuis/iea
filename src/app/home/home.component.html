@@ -36,9 +36,9 @@
 
     <div class="row h-100 video-contenido" style="background-color:black;">
       <div class="col align-self-center" style="color:white">
-        <h3 class="iea-titulo"><strong>¿Qué hacemos?</strong></h3>
+        <h3 class="iea-titulo">¿Qué hacemos?</h3>
         <h2 class="video-mensaje">Empoderamos a través de la tecnología.</h2>
-        <h3 class="iea-titulo"><strong>¿Querés ayudar?</strong></h3>
+        <h3 class="iea-titulo">¿Querés ayudar?</h3>
         <h2 class="video-mensaje">¡No lo dudes más y sumate!</h2>
         <br>
         <br>
@@ -59,22 +59,22 @@
   <div class="row h-100 seccion-fondo" *ngIf="tipoImagen.portada" [ngStyle]="{ 'background-image': 'url(' + decode +  tipoImagen.portada.imagen + ')'}">
     <div class="col-4 iea-columna-texto">
       <h3 class="iea-titulo"><strong><i class="fa fa-question-circle"></i></strong></h3>
-      <h3 class="iea-titulo"><strong>¿Quiénes somos?</strong></h3>
+      <h3 class="iea-titulo">¿Quiénes somos?</h3>
       <p class="iea-texto">Informáticos en Acción (I.E.A) es una iniciativa juvenil fundada en mayo del 2018 con el
         fin de acercar la tecnología como herramienta para impulsar y acompañar los procesos comunitarios en los
         asentamientos irregulares de Uruguay.</p>
     </div>
     <div class="col-4 iea-columna-texto">
       <h3 class="iea-titulo"><strong><i class="fa fa-briefcase"></i></strong></h3>
-      <h3 class="iea-titulo"><strong>Nuestra misión y visión</strong></h3>
+      <h3 class="iea-titulo">Nuestra misión y visión</h3>
       <p class="iea-texto"><strong>La misión</strong> de Informáticos en Acción es brindar espacios de formación en
         tecnología y facilitar el acceso a la misma.</p>
-      <p class="iea-texto"><strong>La visión</strong> de Informáticos en Acción es la democratización de la
+      <p class="iea-texto">La visión de Informáticos en Acción es la democratización de la
         tecnología y lograr el empoderamiento a través de ella.</p>
     </div>
     <div class="col-4 iea-columna-texto">
       <h3 class="iea-titulo"><strong><i class="fa fa-handshake-o"></i></strong></h3>
-      <h3 class="iea-titulo"><strong>¿Cómo ayudarnos?</strong></h3>
+      <h3 class="iea-titulo">¿Cómo ayudarnos?</h3>
       <p class="iea-texto"><strong>Seguinos!</strong> Si, solo siguiendonos ya estas ayudandonos a llegar a mas
         gente.</p>
       <p class="iea-texto"><strong>Sumate!</strong> Te gustaria ser voluntario? Buscamos jovenes con ganas de generar
@@ -83,35 +83,38 @@
         Animate a escribirnos por cualquier consulta.</p>
     </div>
   </div>
-  <div class="row h-100 seccion-fondo" id="institucional" style="background-color:bisque;">
+
+
+
+  <div class="row h-100 seccion-fondo" id="institucional" [ngStyle]="{ 'background-image': 'url(../../assets/backgrund/1.png)'}" style="background-color:rgb(48, 66, 33)">
     <div class="col">
       <div class="row">
         <div class="col text-center">
-          <h1 class="iea-titulo">Conoce Nuestro Directorio</h1>
+          <h1 class="iea-titulo">NUESTRO DIRECTORIO</h1>
         </div>
       </div>
       <div class="row h-100">
         <div class="col-1 align-self-center">
-          <a href="#" (click)="cambioDir('ANT')" style="font-size:50px;"><i class="fa fa-arrow-circle-left"></i></a>
+          <a href="#" class="boton-directorio" (click)="cambioDir('ANT')" style="font-size:50px;"><i class="fa fa-arrow-circle-left"></i></a>
         </div>
         <div class="col-10 mx-auto">
           <div class="row h-100" style="max-height:95% !important;">
-            <div class="col-5 text-center seccion-fondo" style="color:black; background-attachment: inherit;" *ngIf="directorio" [ngStyle]="{ 'background-image': 'url(../../assets/imagenes/' +  directorio[dirNum].imagen + '.jpeg)'}">
+            <div class="col-5 text-center seccion-fondo" style="color:black; background-attachment: inherit; border-radius: 120px; border: 5px solid black;" *ngIf="directorio" [ngStyle]="{ 'background-image': 'url(../../assets/imagenes/' +  directorio[dirNum].imagen + '.jpeg)'}">
 
             </div>
-            <div class="col-7 text-center" style="color:white; background-color: orange">
-              <h4>{{directorio[dirNum].titulo}}</h4>
-              <h6><strong>Nombre completo: </strong>{{directorio[dirNum].nombre}}</h6>
-              <h6><strong>Trabajas en: </strong>{{directorio[dirNum].trabajasEn}}</h6>
-              <h6><strong>Pasion: </strong>{{directorio[dirNum].pasion}}</h6>
-              <h6><strong>Rol en IEA: </strong> {{directorio[dirNum].rol}}</h6>
-              <h6><strong>Porque IEA? </strong>{{directorio[dirNum].porQueIEA}}</h6>
-              <h6><strong>Electrodomestico Favorito: </strong>{{directorio[dirNum].electrodomestico}}</h6>
+            <div class="col-7 p-5" style="color:white; background-color: orange; border-radius: 120px; border: 5px solid black;">
+              <h4><img [src]="'url(../../assets/imagenes/directorio/' + directorio[dirNum].titulo + '.png'" class="img-fluid" style="max-height:50px;"></h4>
+              <h6 class="mt-4 mb-4"><span class="iea-titulo" style="font-size:20px; color: black;">Nombre completo: </span>{{directorio[dirNum].nombre}}</h6>
+              <h6 class="mt-4 mb-4"><span class="iea-titulo" style="font-size:20px; color: black;">Trabajas en: </span>{{directorio[dirNum].trabajasEn}}</h6>
+              <h6 class="mt-4 mb-4"><span class="iea-titulo" style="font-size:20px; color: black;">Pasion: </span>{{directorio[dirNum].pasion}}</h6>
+              <h6 class="mt-4 mb-4"><span class="iea-titulo" style="font-size:20px; color: black;">Rol en IEA: </span> {{directorio[dirNum].rol}}</h6>
+              <h6 class="mt-4 mb-4"><span class="iea-titulo" style="font-size:20px; color: black;">Porque IEA? </span>{{directorio[dirNum].porQueIEA}}</h6>
+              <h6 class="mt-4 mb-4"><span class="iea-titulo" style="font-size:20px; color: black;">Electrodomestico Favorito: </span>{{directorio[dirNum].electrodomestico}}</h6>
             </div>
           </div>
         </div>
         <div class="col-1 align-self-center">
-            <a href="#" (click)="cambioDir('SIG')" style="font-size:50px;"><i class="fa fa-arrow-circle-right"></i></a>
+            <a href="#" class="boton-directorio" (click)="cambioDir('SIG')" style="font-size:50px;"><i class="fa fa-arrow-circle-right"></i></a>
           </div>
       </div>
     </div>
@@ -122,11 +125,11 @@
 
     </div>
   </div>
-  <div class="row h-100" style="background-color:blueviolet;">
+  <div class="row h-100" [ngStyle]="{ 'background-image': 'url(../../assets/backgrund/1.png)'}" style="background-color:blueviolet;">
     <div class="col">
       <div class="row mt-5 mb-2">
         <div class="col text-center">
-          <h3 class="iea-titulo"><strong>Galeria de Instagram</strong></h3>
+          <h3 class="iea-titulo">Galeria de Instagram</h3>
         </div>
       </div>
       <div class="row align-self-center">

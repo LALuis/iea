@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   public dirNum: number = 0;
   public directorio = [
     {
-      titulo: 'Fer...',
+      titulo: '4',
       nombre: 'Fernanda Sesto',
       trabajasEn: 'Area de Testing',
       pasion: 'El desarrollo comunitario y la resolucion de problemas.',
@@ -27,17 +27,17 @@ export class HomeComponent implements OnInit {
       imagen: '33'
     },
     {
-      titulo: 'Gime...',
+      titulo: '1',
       nombre: 'Gimena Alamon',
       trabajasEn: 'Estudio Ingenieria y trabajo en una empresa de software.',
-      pasion: 'El desarrollo comunitario y la resolucion de problemas.',
+      pasion: 'Preguntar a Gime.....',
       rol: 'Lider en el area de contenidos.',
       porQueIEA: 'Porque es la oportunidad perfecta para hacer algo que nos llena, no siendo los unicos beneficiados, lo cual duplica la recompensa.',
       electrodomestico: 'Heladera',
       imagen: '48'
     },
     {
-      titulo: 'Agus...',
+      titulo: '3',
       nombre: 'Agustin Casenave',
       trabajasEn: 'Estudio Ingenieria y trabajo como desarrollador.',
       pasion: 'Musica y libros.',
@@ -47,7 +47,7 @@ export class HomeComponent implements OnInit {
       imagen: '40'
     },
     {
-      titulo: 'Indio...',
+      titulo: '2',
       nombre: 'Nicolas Colombo.',
       trabajasEn: 'Estudio Medicina y programacion',
       pasion: 'Aprender.',

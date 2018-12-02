@@ -64,10 +64,17 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    padding: 5%;
+    padding: 3%;
 }
 
 .icono-redes{
     height: 70px;
 }
 
+.boton-directorio{
+    color: orange;
+}
+
+.boton-directorio:hover{
+    color: #c37f01;
+}
