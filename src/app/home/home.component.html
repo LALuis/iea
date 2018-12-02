@@ -83,9 +83,37 @@
         Animate a escribirnos por cualquier consulta.</p>
     </div>
   </div>
-  <div class="row h-100" style="background-color:blueviolet;" id="institucional">
+  <div class="row h-100 seccion-fondo" id="institucional" style="background-color:bisque;">
     <div class="col">
+      <div class="row">
+        <div class="col text-center">
+          <h1 class="iea-titulo">Conoce Nuestro Directorio</h1>
+        </div>
+      </div>
+      <div class="row h-100">
+        <div class="col-1 align-self-center">
+          <a href="#" (click)="cambioDir('ANT')" style="font-size:50px;"><i class="fa fa-arrow-circle-left"></i></a>
+        </div>
+        <div class="col-10 mx-auto">
+          <div class="row h-100" style="max-height:95% !important;">
+            <div class="col-5 text-center seccion-fondo" style="color:black; background-attachment: inherit;" *ngIf="directorio" [ngStyle]="{ 'background-image': 'url(../../assets/imagenes/' +  directorio[dirNum].imagen + '.jpeg)'}">
 
+            </div>
+            <div class="col-7 text-center" style="color:white; background-color: orange">
+              <h4>{{directorio[dirNum].titulo}}</h4>
+              <h6><strong>Nombre completo: </strong>{{directorio[dirNum].nombre}}</h6>
+              <h6><strong>Trabajas en: </strong>{{directorio[dirNum].trabajasEn}}</h6>
+              <h6><strong>Pasion: </strong>{{directorio[dirNum].pasion}}</h6>
+              <h6><strong>Rol en IEA: </strong> {{directorio[dirNum].rol}}</h6>
+              <h6><strong>Porque IEA? </strong>{{directorio[dirNum].porQueIEA}}</h6>
+              <h6><strong>Electrodomestico Favorito: </strong>{{directorio[dirNum].electrodomestico}}</h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-1 align-self-center">
+            <a href="#" (click)="cambioDir('SIG')" style="font-size:50px;"><i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+      </div>
     </div>
   </div>
   <div class="row h-100 seccion-fondo" *ngIf="tipoImagen.galeriaInstagram" [ngStyle]="{ 'background-image': 'url(' + decode +  tipoImagen.galeriaInstagram.imagen + ')'}"
@@ -114,9 +142,47 @@
     <div class="col">
     </div>
   </div>
-  <div class="row" style="background-color:black" id="contacto">
-    <div class="col" style="color:white">
-      <h6>Contacto:</h6>
+  <div class="row h-75" style="background-color:black;color:white; padding: 2%;" id="contacto">
+    <div class="col text-center" style="color:white">
+      <p style="font-size:20px;">Formulario de contacto:</p>
+    </div>
+    <div class="col text-center">
+      <div class="row">
+        <div class="col">
+          <p style="font-size:20px;">Seguinos en nuestras redes!</p>
+        </div>
+      </div>
+      <div class="row" style="padding: 5%;">
+        <div class="col text-center">
+          <a href="https://www.instagram.com/informaticos_en_accion/" target="_blank">
+            <img class="icono-redes" src="../../assets/iconos/redes/instagram.png">
+          </a>
+        </div>
+        <div class="col text-center">
+          <a href="https://www.facebook.com/Inform%C3%A1ticos-en-Acci%C3%B3n-641741386158432" target="_blank">
+            <img class="icono-redes" src="../../assets/iconos/redes/facebook.png">
+          </a>
+        </div>
+        <div class="col">
+          <a href="https://www.linkedin.com/company/informaticosenaccion/" target="_blank">
+            <img class="icono-redes" src="../../assets/iconos/redes/linkedin.png">
+          </a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <p style="font-size:20px;">Donde se dictan los talleres??</p>
+        </div>
+      </div>
+      <div class="row h-50 seccion-fondo" style="padding: 2%;">
+        <div class="col" style="background-image:url('../../assets/contacto/mapa.png')">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col text-center">
+          Direccion: Pasaje H, a 3 cuadras de Pasaje H y Salida de Paso (Cercano a camino Lecoq).
+        </div>
+      </div>
     </div>
   </div>
 </div>

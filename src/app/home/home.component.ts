@@ -14,6 +14,49 @@ export class HomeComponent implements OnInit {
 
   public decode = "data:image/png;base64,";
   public tipoImagen = [];
+  public dirNum: number = 0;
+  public directorio = [
+    {
+      titulo: 'Fer...',
+      nombre: 'Fernanda Sesto',
+      trabajasEn: 'Area de Testing',
+      pasion: 'El desarrollo comunitario y la resolucion de problemas.',
+      rol: 'Fundadora y Lider dentro del area de gestion.',
+      porQueIEA: 'Porque quiero vivir en un mundo en donde todos tengamos acceso a las mismas oportunidades. La brecha digital tiene que terminar.',
+      electrodomestico: 'Cafetera',
+      imagen: '33'
+    },
+    {
+      titulo: 'Gime...',
+      nombre: 'Gimena Alamon',
+      trabajasEn: 'Estudio Ingenieria y trabajo en una empresa de software.',
+      pasion: 'El desarrollo comunitario y la resolucion de problemas.',
+      rol: 'Lider en el area de contenidos.',
+      porQueIEA: 'Porque es la oportunidad perfecta para hacer algo que nos llena, no siendo los unicos beneficiados, lo cual duplica la recompensa.',
+      electrodomestico: 'Heladera',
+      imagen: '48'
+    },
+    {
+      titulo: 'Agus...',
+      nombre: 'Agustin Casenave',
+      trabajasEn: 'Estudio Ingenieria y trabajo como desarrollador.',
+      pasion: 'Musica y libros.',
+      rol: 'Lider en el area de Tech.',
+      porQueIEA: 'Me parece que es una manera de ayudar a la sociedad en lo que uno puede.',
+      electrodomestico: 'Heladera, porque amo comer.',
+      imagen: '40'
+    },
+    {
+      titulo: 'Indio...',
+      nombre: 'Nicolas Colombo.',
+      trabajasEn: 'Estudio Medicina y programacion',
+      pasion: 'Aprender.',
+      rol: 'Lider en el area de voluntariado.',
+      porQueIEA: 'Porque disfruto ayudando a los demas.',
+      electrodomestico: 'Air Fryer.',
+      imagen: '6'
+    }
+  ];
 
   constructor(private baseService: BaseService, private router: Router) {
   }
@@ -35,7 +78,7 @@ export class HomeComponent implements OnInit {
         this.baseService.setImagen(reader.result.split(',')[1], tipoImagenSeleccionada);
         this.getAllImages();
       }
-      reader.onloadend = () =>{
+      reader.onloadend = () => {
         reader.abort();
       }
     }
@@ -73,6 +116,26 @@ export class HomeComponent implements OnInit {
 
   navegar(ruta) {
     this.router.navigateByUrl(ruta);
+    return false;
+  }
+
+  cambioDir(movimiento){
+    if(movimiento === 'SIG'){
+      if(this.dirNum != this.directorio.length -1){
+        this.dirNum++;
+      }
+      else{
+        this.dirNum = 0;
+      }
+    }
+    else{
+      if(this.dirNum != 0){
+        this.dirNum--;
+      }
+      else{
+        this.dirNum = this.directorio.length -1;
+      }
+    }
     return false;
   }
 

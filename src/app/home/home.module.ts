@@ -9,13 +9,16 @@ import { BaseService } from './base.service';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../../environments/environment';
 import { AngularFirestore } from 'angularfire2/firestore';
+import {PrimengModule } from '../primeng/primeng.module';
+
 @NgModule({
   imports: [
     CommonModule,
     HomeRoutingModule,
     HttpClientModule,
     FormsModule, ReactiveFormsModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    PrimengModule
   ],
   declarations: [HomeComponent, GaleriaComponent],
   providers:[AngularFirestore, HomeComponent]
