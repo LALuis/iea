@@ -19,6 +19,33 @@ export class HomeComponent implements OnInit {
       galeriaInstagram:null
     };
   public dirNum: number = 0;
+  public perfiles: any = [
+    {
+      titulo:'Tech',
+      tareas:'Administrar redes, de la creacion y el mantenimiento de nuestra web y la preparacion del hadware/software para los talleres.',
+      lider:'Agustin Casenave',
+      imagen:'tech'
+    },
+    {
+      titulo:'Gestión',
+      tareas:'Administrar redes, de la creacion y el mantenimiento de nuestra web y la preparacion del hadware/software para los talleres.',
+      lider:'Gimena Alamón',
+      imagen:'gestion'
+    },
+    {
+      titulo:'Contenido',
+      tareas:'La organización de IEA, administrar los recursos (humanos y materiales), logistica de las actividades sociales y difusión empresarial.',
+      lider:'Fernanda Sesto',
+      imagen:'contenido'
+    },
+    {
+      titulo:'Voluntariado',
+      tareas:'Planificar estrategias para captar mas voluntarios, realizar campañas de recoleccion de materiales y actividades para fomentar el trabajo en equipo.',
+      lider:'Nicolás Colombo.',
+      imagen:'voluntariado'
+    }
+  ];
+
   public directorio = [
     {
       titulo: '4',

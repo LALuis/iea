@@ -11,7 +11,7 @@
         <hr>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Inicio</a>
+        <a class="nav-link" href="#inicio">Inicio</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Institucional</a>
@@ -26,7 +26,7 @@
   </div>
 </nav>
 
-<div class="container-fluid h-100" style="margin-top: 70px; padding-top: 70px">
+<div class="container-fluid h-100" style="margin-top: 70px; padding-top: 70px" id="inicio">
 
   <div class="seccion-video" id="inicio">
     <!-- <video autoplay="true" muted='true' loop id="myVideo">
@@ -37,7 +37,7 @@
     <div class="row h-100 video-contenido" style="background-color:black;">
       <div class="col align-self-center" style="color:white">
         <h3 class="iea-titulo">¿Qué hacemos?</h3>
-        <h2 class="video-mensaje">Empoderamos a través de la tecnología.</h2>
+        <h2 class="video-mensaje">Acompañamos procesos comunitarios a través de la tecnología.</h2>
         <h3 class="iea-titulo">¿Querés ayudar?</h3>
         <h2 class="video-mensaje">¡No lo dudes más y sumate!</h2>
         <br>
@@ -75,22 +75,23 @@
     <div class="col-4 iea-columna-texto">
       <h3 class="iea-titulo"><strong><i class="fa fa-handshake-o"></i></strong></h3>
       <h3 class="iea-titulo">¿Cómo ayudarnos?</h3>
-      <p class="iea-texto"><strong>Seguinos!</strong> Si, solo siguiendonos ya estas ayudandonos a llegar a mas
+      <p class="iea-texto"><strong>¡Seguinos!</strong> Si, solo siguiéndonos ya estas ayudándonos a llegar a mas
         gente.</p>
-      <p class="iea-texto"><strong>Sumate!</strong> Te gustaria ser voluntario? Buscamos jovenes con ganas de generar
-        un cambio en la sociedad y hacer buenos amigos</p>
-      <p class="iea-texto"><strong>Dona!</strong> Buscamos alimentos, utiles escolares y partes de computadoras.
+      <p class="iea-texto"><strong>¡Sumate!</strong> ¿Te gustaría ser voluntario? Buscamos jóvenes con ganas de generar
+        un cambio en la sociedad y hacer buenos amigos.</p>
+      <p class="iea-texto"><strong>¡Dona!</strong> Buscamos alimentos, útiles escolares y partes de computadoras.
         Animate a escribirnos por cualquier consulta.</p>
     </div>
   </div>
 
 
 
-  <div class="row h-100 seccion-fondo" id="institucional" [ngStyle]="{ 'background-image': 'url(../../assets/backgrund/1.png)'}" style="background-color:rgb(48, 66, 33)">
-    <div class="col">
+  <div class="row seccion-fondo" id="institucional" [ngStyle]="{ 'background-image': 'url(../../assets/backgrund/1.png)'}"
+    style="background-color:rgb(48, 66, 33)">
+    <div class="col align-self-center">
       <div class="row">
         <div class="col text-center">
-          <h1 class="iea-titulo">NUESTRO DIRECTORIO</h1>
+          <h1 class="iea-titulo mb-5">NUESTRO DIRECTORIO</h1>
         </div>
       </div>
       <div class="row h-100">
@@ -98,38 +99,47 @@
           <a href="#" class="boton-directorio" (click)="cambioDir('ANT')" style="font-size:50px;"><i class="fa fa-arrow-circle-left"></i></a>
         </div>
         <div class="col-10 mx-auto">
-          <div class="row h-100" style="max-height:95% !important;">
-            <div class="col-5 text-center seccion-fondo" style="color:black; background-attachment: inherit; border-radius: 120px; border: 5px solid black;" *ngIf="directorio" [ngStyle]="{ 'background-image': 'url(../../assets/imagenes/' +  directorio[dirNum].imagen + '.jpeg)'}">
+          <div class="row" style="max-height:95% !important;">
+            <div class="col-5 text-center seccion-fondo" style="color:black; background-attachment: inherit; border-radius: 120px; border: 5px solid black;"
+              *ngIf="directorio" [ngStyle]="{ 'background-image': 'url(../../assets/imagenes/' +  directorio[dirNum].imagen + '.jpeg)'}">
 
             </div>
             <div class="col-7 p-5" style="color:white; background-color: orange; border-radius: 120px; border: 5px solid black;">
-              <h4><img [src]="'url(../../assets/imagenes/directorio/' + directorio[dirNum].titulo + '.png'" class="img-fluid" style="max-height:50px;"></h4>
-              <h6 class="mt-4 mb-4"><span class="iea-titulo" style="font-size:20px; color: black;">Nombre completo: </span>{{directorio[dirNum].nombre}}</h6>
-              <h6 class="mt-4 mb-4"><span class="iea-titulo" style="font-size:20px; color: black;">Trabajas en: </span>{{directorio[dirNum].trabajasEn}}</h6>
-              <h6 class="mt-4 mb-4"><span class="iea-titulo" style="font-size:20px; color: black;">Pasion: </span>{{directorio[dirNum].pasion}}</h6>
-              <h6 class="mt-4 mb-4"><span class="iea-titulo" style="font-size:20px; color: black;">Rol en IEA: </span> {{directorio[dirNum].rol}}</h6>
-              <h6 class="mt-4 mb-4"><span class="iea-titulo" style="font-size:20px; color: black;">Porque IEA? </span>{{directorio[dirNum].porQueIEA}}</h6>
-              <h6 class="mt-4 mb-4"><span class="iea-titulo" style="font-size:20px; color: black;">Electrodomestico Favorito: </span>{{directorio[dirNum].electrodomestico}}</h6>
+              <h4 class="text-center"><img [src]="'url(../../assets/imagenes/directorio/' + directorio[dirNum].titulo + '.png'"
+                  class="img-fluid" style="max-height:50px;"></h4>
+              <h6 class="mt-4 mb-4"><span class="iea-titulo" style="font-size:20px; color: black;">Nombre completo:
+                </span>{{directorio[dirNum].nombre}}</h6>
+              <h6 class="mt-4 mb-4"><span class="iea-titulo" style="font-size:20px; color: black;">Trabajás en: </span>{{directorio[dirNum].trabajasEn}}</h6>
+              <h6 class="mt-4 mb-4"><span class="iea-titulo" style="font-size:20px; color: black;">Pasión: </span>{{directorio[dirNum].pasion}}</h6>
+              <h6 class="mt-4 mb-4"><span class="iea-titulo" style="font-size:20px; color: black;">Rol en IEA: </span>
+                {{directorio[dirNum].rol}}</h6>
+              <h6 class="mt-4 mb-4"><span class="iea-titulo" style="font-size:20px; color: black;">¿Por qué IEA? </span>{{directorio[dirNum].porQueIEA}}</h6>
+              <h6 class="mt-4 mb-4"><span class="iea-titulo" style="font-size:20px; color: black;">Electrodomestico
+                  Favorito: </span>{{directorio[dirNum].electrodomestico}}</h6>
             </div>
           </div>
         </div>
-        <div class="col-1 align-self-center">
-            <a href="#" class="boton-directorio" (click)="cambioDir('SIG')" style="font-size:50px;"><i class="fa fa-arrow-circle-right"></i></a>
-          </div>
+        <div class="col-1 align-self-center text-right">
+          <a href="#" class="boton-directorio" (click)="cambioDir('SIG')" style="font-size:50px;"><i class="fa fa-arrow-circle-right"></i></a>
+        </div>
       </div>
     </div>
   </div>
+
+
+
   <div class="row h-100 seccion-fondo" *ngIf="tipoImagen && tipoImagen.galeriaInstagram" [ngStyle]="{ 'background-image': 'url(' + decode +  tipoImagen.galeriaInstagram.imagen + ')'}"
     id="galeria">
-    <div class="col">
 
-    </div>
   </div>
-  <div class="row h-100" [ngStyle]="{ 'background-image': 'url(../../assets/backgrund/1.png)'}" style="background-color:blueviolet;">
+
+
+
+  <div class="row h-100" [ngStyle]="{ 'background-image': 'url(../../assets/backgrund/1.png)'}" style="background-color:#7d532d;">
     <div class="col">
       <div class="row mt-5 mb-2">
         <div class="col text-center">
-          <h3 class="iea-titulo">Galeria de Instagram</h3>
+          <h3 class="iea-titulo">Galería de Instagram</h3>
         </div>
       </div>
       <div class="row align-self-center">
@@ -147,12 +157,23 @@
   </div>
   <div class="row h-75" style="background-color:black;color:white; padding: 2%;" id="contacto">
     <div class="col text-center" style="color:white">
-      <p style="font-size:20px;">Formulario de contacto:</p>
-    </div>
-    <div class="col text-center">
+      <div class="row h-50">
+        <div class="col align-self-center">
+          <div class="row">
+            <div class="col align-self-center">
+              <h3 class="iea-titulo" style="font-size:30px;">Contacto:</h3>
+              <p class="mt-4" style="font-size:20px;"><i class="fa fa-phone" style="font-size:30px;"></i> Teléfono:
+                092121666</p>
+              <p class="mt-4" style="font-size:20px;"><i class="fa fa-envelope" style="font-size:30px;"></i> Correo:
+                iea.fundacion@gmail.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="row">
         <div class="col">
-          <p style="font-size:20px;">Seguinos en nuestras redes!</p>
+          <h3 class="iea-titulo" style="font-size:30px;">¡ Seguinos en nuestras redes !</h3>
         </div>
       </div>
       <div class="row" style="padding: 5%;">
@@ -172,18 +193,20 @@
           </a>
         </div>
       </div>
+    </div>
+    <div class="col text-center">
       <div class="row">
         <div class="col">
-          <p style="font-size:20px;">Donde se dictan los talleres??</p>
+          <h3 class="iea-titulo" style="font-size:30px;">¿Donde se dictan los talleres?</h3>
         </div>
       </div>
-      <div class="row h-50 seccion-fondo" style="padding: 2%;">
+      <div class="row h-75 seccion-fondo" style="padding: 2%; min-height: 75%">
         <div class="col" style="background-image:url('../../assets/contacto/mapa.png')">
         </div>
       </div>
       <div class="row">
         <div class="col text-center">
-          Direccion: Pasaje H, a 3 cuadras de Pasaje H y Salida de Paso (Cercano a camino Lecoq).
+          Dirección: Pasaje H, a 3 cuadras de Pasaje H y Salida de Paso (Cercano a camino Lecoq).
         </div>
       </div>
     </div>
