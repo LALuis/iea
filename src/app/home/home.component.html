@@ -128,9 +128,27 @@
 
 
 
-  <div class="row h-100 seccion-fondo" *ngIf="tipoImagen && tipoImagen.galeriaInstagram" [ngStyle]="{ 'background-image': 'url(' + decode +  tipoImagen.galeriaInstagram.imagen + ')'}"
+  <div class="row seccion-fondo" *ngIf="tipoImagen && tipoImagen.galeriaInstagram" [ngStyle]="{ 'background-image': 'url(' + decode +  tipoImagen.galeriaInstagram.imagen + ')'}"
     id="galeria">
+    <div class="col align-self-center iea-columna-texto" style="background-color:rgba(255, 0, 0, 0.25);">
+      <div class="row mb-2">
+        <div class="col text-center">
+          <h3 class="iea-titulo">Perfiles en IEA</h3>
+        </div>
+      </div>
 
+      <div class="row">
+        <ng-container *ngFor="let perfil of perfiles">
+          <div class="col-3  align-self-center">
+            <h3 class="iea-titulo" style="font-size: 30px;"><strong><i class="fa" [ngClass]="perfil.icon"></i></strong></h3>
+            <h3 class="iea-titulo" style="font-size: 30px;">{{perfil.titulo}}</h3>
+            <p class="iea-texto"><strong>Se encarga de: </strong>{{perfil.tareas}}</p>
+            <p class="iea-texto"><strong>Lider: </strong>{{perfil.lider}}</p>
+          </div>
+        </ng-container>
+      </div>
+
+    </div>
   </div>
 
 
@@ -153,8 +171,22 @@
   <div class="row h-100 seccion-fondo" *ngIf="tipoImagen && tipoImagen.nosotros" [ngStyle]="{ 'background-image': 'url(' + decode +  tipoImagen.nosotros.imagen + ')'}"
     id="nosotros">
     <div class="col">
+      <div class="row mb-2">
+        <div class="col text-center">
+          <h3 class="iea-titulo">Nuestra Galería</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 mx-auto">
+          Poner imagenes aca
+        </div>
+      </div>
     </div>
   </div>
+
+
+
+
   <div class="row h-75" style="background-color:black;color:white; padding: 2%;" id="contacto">
     <div class="col text-center" style="color:white">
       <div class="row h-50">
@@ -170,7 +202,6 @@
           </div>
         </div>
       </div>
-
       <div class="row">
         <div class="col">
           <h3 class="iea-titulo" style="font-size:30px;">¡ Seguinos en nuestras redes !</h3>
@@ -211,4 +242,7 @@
       </div>
     </div>
   </div>
+
+
+
 </div>

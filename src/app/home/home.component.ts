@@ -19,30 +19,35 @@ export class HomeComponent implements OnInit {
       galeriaInstagram:null
     };
   public dirNum: number = 0;
+  public perfNum: number = 0;
   public perfiles: any = [
     {
       titulo:'Tech',
-      tareas:'Administrar redes, de la creacion y el mantenimiento de nuestra web y la preparacion del hadware/software para los talleres.',
-      lider:'Agustin Casenave',
-      imagen:'tech'
-    },
-    {
-      titulo:'Gestión',
-      tareas:'Administrar redes, de la creacion y el mantenimiento de nuestra web y la preparacion del hadware/software para los talleres.',
-      lider:'Gimena Alamón',
-      imagen:'gestion'
+      tareas:'Administrar redes, de la creación y el mantenimiento de nuestra web y la preparación del hadware/software para los talleres.',
+      lider:'Agustín Casenave',
+      imagen:'tech',
+      icon:'fa-cogs'
     },
     {
       titulo:'Contenido',
-      tareas:'La organización de IEA, administrar los recursos (humanos y materiales), logistica de las actividades sociales y difusión empresarial.',
+      tareas:'Crear material didáctico y recreativo para la realización de los talleres. Tanto para los niños como para los voluntarios que asisten a dichos talleres.',
+      lider:'Gimena Alamón',
+      imagen:'contenido',
+      icon:'fa-suitcase'
+    },
+    {
+      titulo:'Gestión',
+      tareas:'La organización de IEA, administrar los recursos (humanos y materiales), logística de las actividades sociales y difusión empresarial.',
       lider:'Fernanda Sesto',
-      imagen:'contenido'
+      imagen:'gestion',
+      icon:'fa-line-chart'
     },
     {
       titulo:'Voluntariado',
-      tareas:'Planificar estrategias para captar mas voluntarios, realizar campañas de recoleccion de materiales y actividades para fomentar el trabajo en equipo.',
+      tareas:'Planificar estrategias para captar mas voluntarios, realizar campañas de recolección de materiales y actividades para fomentar el trabajo en equipo.',
       lider:'Nicolás Colombo.',
-      imagen:'voluntariado'
+      imagen:'voluntariado',
+      icon:'fa-thumbs-up'
     }
   ];
 
@@ -51,8 +56,8 @@ export class HomeComponent implements OnInit {
       titulo: '4',
       nombre: 'Fernanda Sesto',
       trabajasEn: 'Area de Testing',
-      pasion: 'El desarrollo comunitario y la resolucion de problemas.',
-      rol: 'Fundadora y Lider dentro del area de gestion.',
+      pasion: 'El desarrollo comunitario y la resolución de problemas.',
+      rol: 'Fundadora y Lider dentro del área de gestión.',
       porQueIEA: 'Porque quiero vivir en un mundo en donde todos tengamos acceso a las mismas oportunidades. La brecha digital tiene que terminar.',
       electrodomestico: 'Cafetera',
       imagen: '33'
@@ -60,19 +65,19 @@ export class HomeComponent implements OnInit {
     {
       titulo: '1',
       nombre: 'Gimena Alamon',
-      trabajasEn: 'Estudio Ingenieria y trabajo en una empresa de software.',
-      pasion: 'Preguntar a Gime.....',
-      rol: 'Lider en el area de contenidos.',
-      porQueIEA: 'Porque es la oportunidad perfecta para hacer algo que nos llena, no siendo los unicos beneficiados, lo cual duplica la recompensa.',
+      trabajasEn: 'Estudio Ingeniería y trabajo en una empresa de software.',
+      pasion: 'Me gusta la tecnología y el poder enseñar a los demás.',
+      rol: 'Lider en el área de contenidos.',
+      porQueIEA: 'Porque es la oportunidad perfecta para hacer algo que nos llena, no siendo los únicos beneficiados, lo cual duplica la recompensa.',
       electrodomestico: 'Heladera',
       imagen: '48'
     },
     {
       titulo: '3',
-      nombre: 'Agustin Casenave',
-      trabajasEn: 'Estudio Ingenieria y trabajo como desarrollador.',
+      nombre: 'Agustín Casenave',
+      trabajasEn: 'Estudio Ingeniería y trabajo como desarrollador.',
       pasion: 'Musica y libros.',
-      rol: 'Lider en el area de Tech.',
+      rol: 'Lider en el área de Tech.',
       porQueIEA: 'Me parece que es una manera de ayudar a la sociedad en lo que uno puede.',
       electrodomestico: 'Heladera, porque amo comer.',
       imagen: '40'
@@ -82,7 +87,7 @@ export class HomeComponent implements OnInit {
       nombre: 'Nicolas Colombo.',
       trabajasEn: 'Estudio Medicina y programacion',
       pasion: 'Aprender.',
-      rol: 'Lider en el area de voluntariado.',
+      rol: 'Lider en el área de voluntariado.',
       porQueIEA: 'Porque disfruto ayudando a los demas.',
       electrodomestico: 'Air Fryer.',
       imagen: '6'
