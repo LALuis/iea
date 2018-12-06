@@ -1,248 +1,279 @@
-<nav class="navbar navbar-expand-md navbar-default fixed-top d-flex flex-row" role="navigation">
-  <div class="order-0">
-    <a class="navbar-brand p-10" href="#"><img class="image-fluid iea-logo" src="assets/iea_logo_byn.png"></a>
-  </div>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
-    <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
-  </button>
-  <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-    <ul class="navbar-nav ml-auto text-center">
-      <li class="nav-item">
-        <hr>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#inicio">Inicio</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Institucional</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#" (click)="navegar('galeria')">Galería</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Contacto</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-
-<div class="container-fluid h-100" style="margin-top: 70px; padding-top: 70px" id="inicio">
-
-  <div class="seccion-video" id="inicio">
-    <!-- <video autoplay="true" muted='true' loop id="myVideo">
-          <source src="assets/videos/video_3.mp4" type="video/mp4">
-          Your browser does not support HTML5 video.
-        </video> -->
-
-    <div class="row h-100 video-contenido" style="background-color:black;">
-      <div class="col align-self-center" style="color:white">
-        <h3 class="iea-titulo">¿Qué hacemos?</h3>
-        <h2 class="video-mensaje">Acompañamos procesos comunitarios a través de la tecnología.</h2>
-        <h3 class="iea-titulo">¿Querés ayudar?</h3>
-        <h2 class="video-mensaje">¡No lo dudes más y sumate!</h2>
-        <br>
-        <br>
-        <button type="button" class="btn btn-outline-warning iea-boton">Quiero Donar!</button>
-        <button type="button" class="btn btn-outline-warning iea-boton" style="margin-left:20px;">Quiero ser
-          Voluntario!</button>
-        <br>
-        <br>
-        <h5 style="margin-top: 20px; color: wheat;">Seguir leyendo...</h5>
-        <h5 style="font-size:60px; color:wheat;"><i class="fa fa-angle-double-down"></i></h5>
-      </div>
-    </div>
-  </div>
-
-
-
-
-  <div class="row h-100 seccion-fondo" *ngIf="tipoImagen && tipoImagen.portada" [ngStyle]="{ 'background-image': 'url(' + decode +  tipoImagen.portada.imagen + ')'}">
-    <div class="col-4 iea-columna-texto">
-      <h3 class="iea-titulo"><strong><i class="fa fa-question-circle"></i></strong></h3>
-      <h3 class="iea-titulo">¿Quiénes somos?</h3>
-      <p class="iea-texto">Informáticos en Acción (I.E.A) es una iniciativa juvenil fundada en mayo del 2018 con el
-        fin de acercar la tecnología como herramienta para impulsar y acompañar los procesos comunitarios en los
-        asentamientos irregulares de Uruguay.</p>
-    </div>
-    <div class="col-4 iea-columna-texto">
-      <h3 class="iea-titulo"><strong><i class="fa fa-briefcase"></i></strong></h3>
-      <h3 class="iea-titulo">Nuestra misión y visión</h3>
-      <p class="iea-texto"><strong>La misión</strong> de Informáticos en Acción es brindar espacios de formación en
-        tecnología y facilitar el acceso a la misma.</p>
-      <p class="iea-texto">La visión de Informáticos en Acción es la democratización de la
-        tecnología y lograr el empoderamiento a través de ella.</p>
-    </div>
-    <div class="col-4 iea-columna-texto">
-      <h3 class="iea-titulo"><strong><i class="fa fa-handshake-o"></i></strong></h3>
-      <h3 class="iea-titulo">¿Cómo ayudarnos?</h3>
-      <p class="iea-texto"><strong>¡Seguinos!</strong> Si, solo siguiéndonos ya estas ayudándonos a llegar a mas
-        gente.</p>
-      <p class="iea-texto"><strong>¡Sumate!</strong> ¿Te gustaría ser voluntario? Buscamos jóvenes con ganas de generar
-        un cambio en la sociedad y hacer buenos amigos.</p>
-      <p class="iea-texto"><strong>¡Dona!</strong> Buscamos alimentos, útiles escolares y partes de computadoras.
-        Animate a escribirnos por cualquier consulta.</p>
-    </div>
-  </div>
-
-
-
-  <div class="row seccion-fondo" id="institucional" [ngStyle]="{ 'background-image': 'url(../../assets/backgrund/1.png)'}"
-    style="background-color:rgb(48, 66, 33)">
-    <div class="col align-self-center">
-      <div class="row">
-        <div class="col text-center">
-          <h1 class="iea-titulo mb-5">NUESTRO DIRECTORIO</h1>
+<ng-container *ngIf="loading === true">
+  <div class="container-fluid h-100" style="background-color:white;">
+    <div class="row h-100">
+      <div class="col align-self-center mx-auto text-center">
+        <div class="lds-ring" style="background-color:white;">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <img src="../assets/iea_logo.png" class="img-fluid IEA-spinner" alt="IEA">
         </div>
       </div>
-      <div class="row h-100">
-        <div class="col-1 align-self-center">
-          <a href="#" class="boton-directorio" (click)="cambioDir('ANT')" style="font-size:50px;"><i class="fa fa-arrow-circle-left"></i></a>
-        </div>
-        <div class="col-10 mx-auto">
-          <div class="row" style="max-height:95% !important;">
-            <div class="col-5 text-center seccion-fondo" style="color:black; background-attachment: inherit; border-radius: 120px; border: 5px solid black;"
-              *ngIf="directorio" [ngStyle]="{ 'background-image': 'url(../../assets/imagenes/' +  directorio[dirNum].imagen + '.jpeg)'}">
+    </div>
+  </div>
+</ng-container>
 
-            </div>
-            <div class="col-7 p-5" style="color:white; background-color: orange; border-radius: 120px; border: 5px solid black;">
-              <h4 class="text-center"><img [src]="'url(../../assets/imagenes/directorio/' + directorio[dirNum].titulo + '.png'"
-                  class="img-fluid" style="max-height:50px;"></h4>
-              <h6 class="mt-4 mb-4"><span class="iea-titulo" style="font-size:20px; color: black;">Nombre completo:
-                </span>{{directorio[dirNum].nombre}}</h6>
-              <h6 class="mt-4 mb-4"><span class="iea-titulo" style="font-size:20px; color: black;">Trabajás en: </span>{{directorio[dirNum].trabajasEn}}</h6>
-              <h6 class="mt-4 mb-4"><span class="iea-titulo" style="font-size:20px; color: black;">Pasión: </span>{{directorio[dirNum].pasion}}</h6>
-              <h6 class="mt-4 mb-4"><span class="iea-titulo" style="font-size:20px; color: black;">Rol en IEA: </span>
-                {{directorio[dirNum].rol}}</h6>
-              <h6 class="mt-4 mb-4"><span class="iea-titulo" style="font-size:20px; color: black;">¿Por qué IEA? </span>{{directorio[dirNum].porQueIEA}}</h6>
-              <h6 class="mt-4 mb-4"><span class="iea-titulo" style="font-size:20px; color: black;">Electrodomestico
-                  Favorito: </span>{{directorio[dirNum].electrodomestico}}</h6>
-            </div>
+
+<ng-container *ngIf="loading === false">
+  <nav class="navbar navbar-expand-md navbar-default fixed-top d-flex flex-row" role="navigation">
+    <div class="order-0">
+      <a class="navbar-brand p-10" href="#"><img class="image-fluid iea-logo" src="assets/iea_logo_byn.png"></a>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+      <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+    </button>
+    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+      <ul class="navbar-nav ml-auto text-center">
+        <li class="nav-item">
+          <hr>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#inicio">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#Institucional">Institucional</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#Galeria">Galería</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#Contacto">Contacto</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container-fluid h-100" style="margin-top: 70px; padding-top: 70px" id="inicio">
+
+    <div class="seccion-video" id="inicio">
+      <!-- <video autoplay="true" muted='true' loop id="myVideo">
+                <source src="assets/videos/video_3.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+              </video> -->
+
+      <div class="row h-100 video-contenido" style="background-color:black;">
+        <div class="col align-self-center" style="color:white">
+          <h3 class="iea-titulo">¿Qué hacemos?</h3>
+          <h2 class="video-mensaje">Acompañamos procesos comunitarios a través de la tecnología.</h2>
+          <h3 class="iea-titulo">¿Querés ayudar?</h3>
+          <h2 class="video-mensaje">¡No lo dudes más y sumate!</h2>
+          <br>
+          <br>
+          <button type="button" class="btn btn-outline-warning iea-boton">Quiero Donar!</button>
+          <button type="button" class="btn btn-outline-warning iea-boton" style="margin-left:20px;">Quiero ser
+            Voluntario!</button>
+          <br>
+          <br>
+          <h5 style="margin-top: 20px; color: wheat;">Seguir leyendo...</h5>
+          <h5 style="font-size:60px; color:wheat;"><i class="fa fa-angle-double-down"></i></h5>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="row h-100 seccion-fondo" *ngIf="tipoImagen && tipoImagen.portada" [ngStyle]="{ 'background-image': 'url(' + decode +  tipoImagen.portada.imagen + ')'}" id="Institucional">
+      <div class="col-4 iea-columna-texto">
+        <h3 class="iea-titulo"><strong><i class="fa fa-question-circle"></i></strong></h3>
+        <h3 class="iea-titulo">¿Quiénes somos?</h3>
+        <p class="iea-texto">Informáticos en Acción (I.E.A) es una iniciativa juvenil fundada en mayo del 2018 con el
+          fin de acercar la tecnología como herramienta para impulsar y acompañar los procesos comunitarios en los
+          asentamientos irregulares de Uruguay.</p>
+      </div>
+      <div class="col-4 iea-columna-texto">
+        <h3 class="iea-titulo"><strong><i class="fa fa-briefcase"></i></strong></h3>
+        <h3 class="iea-titulo">Nuestra misión y visión</h3>
+        <p class="iea-texto"><strong>La misión</strong> de Informáticos en Acción es brindar espacios de formación en
+          tecnología y facilitar el acceso a la misma.</p>
+        <p class="iea-texto">La visión de Informáticos en Acción es la democratización de la
+          tecnología y lograr el empoderamiento a través de ella.</p>
+      </div>
+      <div class="col-4 iea-columna-texto">
+        <h3 class="iea-titulo"><strong><i class="fa fa-handshake-o"></i></strong></h3>
+        <h3 class="iea-titulo">¿Cómo ayudarnos?</h3>
+        <p class="iea-texto"><strong>¡Seguinos!</strong> Si, solo siguiéndonos ya estas ayudándonos a llegar a mas
+          gente.</p>
+        <p class="iea-texto"><strong>¡Sumate!</strong> ¿Te gustaría ser voluntario? Buscamos jóvenes con ganas de
+          generar
+          un cambio en la sociedad y hacer buenos amigos.</p>
+        <p class="iea-texto"><strong>¡Dona!</strong> Buscamos alimentos, útiles escolares y partes de computadoras.
+          Animate a escribirnos por cualquier consulta.</p>
+      </div>
+    </div>
+
+
+
+    <div class="row seccion-fondo" [ngStyle]="{ 'background-image': 'url(../../assets/backgrund/1.png)'}"
+      style="background-color:rgb(48, 66, 33)">
+      <div class="col align-self-center">
+        <div class="row">
+          <div class="col text-center">
+            <h1 class="iea-titulo mb-5">NUESTRO DIRECTORIO</h1>
           </div>
         </div>
-        <div class="col-1 align-self-center text-right">
-          <a href="#" class="boton-directorio" (click)="cambioDir('SIG')" style="font-size:50px;"><i class="fa fa-arrow-circle-right"></i></a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-  <div class="row seccion-fondo" *ngIf="tipoImagen && tipoImagen.galeriaInstagram" [ngStyle]="{ 'background-image': 'url(' + decode +  tipoImagen.galeriaInstagram.imagen + ')'}"
-    id="galeria">
-    <div class="col align-self-center iea-columna-texto" style="background-color:rgba(255, 0, 0, 0.25);">
-      <div class="row mb-2">
-        <div class="col text-center">
-          <h3 class="iea-titulo">Perfiles en IEA</h3>
-        </div>
-      </div>
-
-      <div class="row">
-        <ng-container *ngFor="let perfil of perfiles">
-          <div class="col-3  align-self-center">
-            <h3 class="iea-titulo" style="font-size: 30px;"><strong><i class="fa" [ngClass]="perfil.icon"></i></strong></h3>
-            <h3 class="iea-titulo" style="font-size: 30px;">{{perfil.titulo}}</h3>
-            <p class="iea-texto"><strong>Se encarga de: </strong>{{perfil.tareas}}</p>
-            <p class="iea-texto"><strong>Lider: </strong>{{perfil.lider}}</p>
+        <div class="row h-100">
+          <div class="col-1 align-self-center">
+            <a href="#" class="boton-directorio" (click)="cambioDir('ANT')" style="font-size:50px;"><i class="fa fa-arrow-circle-left"></i></a>
           </div>
-        </ng-container>
-      </div>
+          <div class="col-10 mx-auto">
+            <div class="row" style="max-height:95% !important;">
+              <div class="col-5 text-center seccion-fondo" style="color:black; background-attachment: inherit; border-radius: 120px; border: 5px solid black;"
+                *ngIf="directorio" [ngStyle]="{ 'background-image': 'url(../../assets/imagenes/' +  directorio[dirNum].imagen + '.jpeg)'}">
 
-    </div>
-  </div>
-
-
-
-  <div class="row h-100" [ngStyle]="{ 'background-image': 'url(../../assets/backgrund/1.png)'}" style="background-color:#7d532d;">
-    <div class="col">
-      <div class="row mt-5 mb-2">
-        <div class="col text-center">
-          <h3 class="iea-titulo">Galería de Instagram</h3>
-        </div>
-      </div>
-      <div class="row align-self-center">
-        <div class="col">
-          <iframe src='https://www.juicer.io/api/feeds/informaticos_en_accion/iframe' frameborder='0' width='100%'
-            height='500' style='display:block;margin:0 auto;'></iframe>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row h-100 seccion-fondo" *ngIf="tipoImagen && tipoImagen.nosotros" [ngStyle]="{ 'background-image': 'url(' + decode +  tipoImagen.nosotros.imagen + ')'}"
-    id="nosotros">
-    <div class="col">
-      <div class="row mb-2">
-        <div class="col text-center">
-          <h3 class="iea-titulo">Nuestra Galería</h3>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-6 mx-auto">
-          Poner imagenes aca
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-
-  <div class="row h-75" style="background-color:black;color:white; padding: 2%;" id="contacto">
-    <div class="col text-center" style="color:white">
-      <div class="row h-50">
-        <div class="col align-self-center">
-          <div class="row">
-            <div class="col align-self-center">
-              <h3 class="iea-titulo" style="font-size:30px;">Contacto:</h3>
-              <p class="mt-4" style="font-size:20px;"><i class="fa fa-phone" style="font-size:30px;"></i> Teléfono:
-                092121666</p>
-              <p class="mt-4" style="font-size:20px;"><i class="fa fa-envelope" style="font-size:30px;"></i> Correo:
-                iea.fundacion@gmail.com</p>
+              </div>
+              <div class="col-7 p-5" style="color:white; background-color: orange; border-radius: 120px; border: 5px solid black;">
+                <h4 class="text-center"><img [src]="'url(../../assets/imagenes/directorio/' + directorio[dirNum].titulo + '.png'"
+                    class="img-fluid" style="max-height:50px;"></h4>
+                <h6 class="mt-4 mb-4"><span class="iea-titulo" style="font-size:20px; color: black;">Nombre completo:
+                  </span>{{directorio[dirNum].nombre}}</h6>
+                <h6 class="mt-4 mb-4"><span class="iea-titulo" style="font-size:20px; color: black;">Trabajás en:
+                  </span>{{directorio[dirNum].trabajasEn}}</h6>
+                <h6 class="mt-4 mb-4"><span class="iea-titulo" style="font-size:20px; color: black;">Pasión: </span>{{directorio[dirNum].pasion}}</h6>
+                <h6 class="mt-4 mb-4"><span class="iea-titulo" style="font-size:20px; color: black;">Rol en IEA: </span>
+                  {{directorio[dirNum].rol}}</h6>
+                <h6 class="mt-4 mb-4"><span class="iea-titulo" style="font-size:20px; color: black;">¿Por qué IEA?
+                  </span>{{directorio[dirNum].porQueIEA}}</h6>
+                <h6 class="mt-4 mb-4"><span class="iea-titulo" style="font-size:20px; color: black;">Electrodomestico
+                    Favorito: </span>{{directorio[dirNum].electrodomestico}}</h6>
+              </div>
             </div>
+          </div>
+          <div class="col-1 align-self-center text-right">
+            <a href="#" class="boton-directorio" (click)="cambioDir('SIG')" style="font-size:50px;"><i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col">
-          <h3 class="iea-titulo" style="font-size:30px;">¡ Seguinos en nuestras redes !</h3>
+    </div>
+
+
+
+    <div class="row seccion-fondo" *ngIf="tipoImagen && tipoImagen.galeriaInstagram" [ngStyle]="{ 'background-image': 'url(' + decode +  tipoImagen.galeriaInstagram.imagen + ')'}">
+      <div class="col align-self-center iea-columna-texto" style="background-color:rgba(255, 0, 0, 0.25);">
+        <div class="row mb-2">
+          <div class="col text-center">
+            <h3 class="iea-titulo">Perfiles en IEA</h3>
+          </div>
         </div>
+        <div class="row">
+          <ng-container *ngFor="let perfil of perfiles">
+            <div class="col-3  align-self-center">
+              <h3 class="iea-titulo" style="font-size: 30px;"><strong><i class="fa" [ngClass]="perfil.icon"></i></strong></h3>
+              <h3 class="iea-titulo" style="font-size: 30px;">{{perfil.titulo}}</h3>
+              <p class="iea-texto"><strong>Se encarga de: </strong>{{perfil.tareas}}</p>
+              <p class="iea-texto"><strong>Lider: </strong>{{perfil.lider}}</p>
+            </div>
+          </ng-container>
+        </div>
+
       </div>
-      <div class="row" style="padding: 5%;">
-        <div class="col text-center">
-          <a href="https://www.instagram.com/informaticos_en_accion/" target="_blank">
-            <img class="icono-redes" src="../../assets/iconos/redes/instagram.png">
-          </a>
+    </div>
+
+
+
+    <div class="row h-100" [ngStyle]="{ 'background-image': 'url(../../assets/backgrund/1.png)'}" style="background-color:#7d532d;">
+      <div class="col">
+        <div class="row mt-5 mb-2">
+          <div class="col text-center">
+            <h3 class="iea-titulo">Galería de Instagram</h3>
+          </div>
         </div>
-        <div class="col text-center">
-          <a href="https://www.facebook.com/Inform%C3%A1ticos-en-Acci%C3%B3n-641741386158432" target="_blank">
-            <img class="icono-redes" src="../../assets/iconos/redes/facebook.png">
-          </a>
-        </div>
-        <div class="col">
-          <a href="https://www.linkedin.com/company/informaticosenaccion/" target="_blank">
-            <img class="icono-redes" src="../../assets/iconos/redes/linkedin.png">
-          </a>
+        <div class="row align-self-center">
+          <div class="col">
+            <iframe src='https://www.juicer.io/api/feeds/informaticos_en_accion/iframe' frameborder='0' width='100%'
+              height='500' style='display:block;margin:0 auto;'></iframe>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col text-center">
-      <div class="row">
-        <div class="col">
-          <h3 class="iea-titulo" style="font-size:30px;">¿Donde se dictan los talleres?</h3>
+
+
+
+
+    <div class="row seccion-fondo" *ngIf="tipoImagen && tipoImagen.nosotros" [ngStyle]="{ 'background-image': 'url(' + decode +  tipoImagen.nosotros.imagen + ')'}"
+      id="Galeria">
+      <div class="col">
+        <div class="row mb-2">
+          <div class="col text-center">
+            <h3 class="iea-titulo">Nuestra Galería</h3>
+          </div>
         </div>
-      </div>
-      <div class="row h-75 seccion-fondo" style="padding: 2%; min-height: 75%">
-        <div class="col" style="background-image:url('../../assets/contacto/mapa.png')">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col text-center">
-          Dirección: Pasaje H, a 3 cuadras de Pasaje H y Salida de Paso (Cercano a camino Lecoq).
+        <div class="row seccion-fondo">
+          <div class="col-1 align-self-center">
+            <a href="#" class="boton-directorio" (click)="cambioGaleria('ANT')" style="font-size:50px;"><i class="fa fa-arrow-circle-left"></i></a>
+          </div>
+          <div class="col-6 mx-auto" [ngStyle]="{ 'background-image': 'url(../../assets/imagenes/' + galeriaNum + '.jpeg)'}" style="background-position:center; background-repeat: no-repeat; border: 10px solid orange;
+          border-radius: 50px;
+          box-shadow: rgba(0, 0, 0, 0.28) 15px 7px 20px 3px;">
+          </div>
+          <div class="col-1 align-self-center">
+            <a href="#" class="boton-directorio" (click)="cambioGaleria('SIG')" style="font-size:50px;"><i class="fa fa-arrow-circle-right"></i></a>
+          </div>
         </div>
       </div>
     </div>
+
+
+
+
+    <div class="row h-75" style="background-color:black;color:white; padding: 2%;" id="Contacto">
+      <div class="col text-center" style="color:white">
+        <div class="row h-50">
+          <div class="col align-self-center">
+            <div class="row">
+              <div class="col align-self-center">
+                <h3 class="iea-titulo" style="font-size:30px;">Contacto:</h3>
+                <p class="mt-4" style="font-size:20px;"><i class="fa fa-phone" style="font-size:30px;"></i> Teléfono:
+                  092121666</p>
+                <p class="mt-4" style="font-size:20px;"><i class="fa fa-envelope" style="font-size:30px;"></i> Correo:
+                  iea.fundacion@gmail.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h3 class="iea-titulo" style="font-size:30px;">¡ Seguinos en nuestras redes !</h3>
+          </div>
+        </div>
+        <div class="row" style="padding: 5%;">
+          <div class="col text-center">
+            <a href="https://www.instagram.com/informaticos_en_accion/" target="_blank">
+              <img class="icono-redes" src="../../assets/iconos/redes/instagram.png">
+            </a>
+          </div>
+          <div class="col text-center">
+            <a href="https://www.facebook.com/Inform%C3%A1ticos-en-Acci%C3%B3n-641741386158432" target="_blank">
+              <img class="icono-redes" src="../../assets/iconos/redes/facebook.png">
+            </a>
+          </div>
+          <div class="col">
+            <a href="https://www.linkedin.com/company/informaticosenaccion/" target="_blank">
+              <img class="icono-redes" src="../../assets/iconos/redes/linkedin.png">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col text-center">
+        <div class="row">
+          <div class="col">
+            <h3 class="iea-titulo" style="font-size:30px;">¿Donde se dictan los talleres?</h3>
+          </div>
+        </div>
+        <div class="row h-75 seccion-fondo" style="padding: 2%; min-height: 75%">
+          <div class="col" style="background-image:url('../../assets/contacto/mapa.png')">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col text-center">
+            Dirección: Pasaje H, a 3 cuadras de Pasaje H y Salida de Paso (Cercano a camino Lecoq).
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
   </div>
-
-
-
-</div>
+</ng-container>
