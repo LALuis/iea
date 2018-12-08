@@ -28,7 +28,11 @@
         height: 100%;
         background-color: #f4f4f4;
         font-size: 1.0rem;
-        
+        scroll-behavior: smooth;
+    }
+
+    html{
+        scroll-behavior: smooth;
     }
 
     .iea-boton{

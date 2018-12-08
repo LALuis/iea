@@ -164,7 +164,7 @@ export class HomeComponent implements OnInit {
   }
 
   navegar(ruta) {
-    this.router.navigateByUrl(ruta);
+    window.open(ruta,'_blank');
     return false;
   }
 
@@ -205,6 +205,11 @@ export class HomeComponent implements OnInit {
         this.galeriaNum = 56;
       }
     }
+    return false;
+  }
+
+  scroll(hash:string){
+    window.location.hash = hash;
     return false;
   }
 
